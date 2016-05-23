@@ -22,6 +22,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.Ordered;
 import org.springframework.util.MimeType;
 import org.thymeleaf.dialect.IDialect;
+import org.thymeleaf.extras.springsecurity4.dialect.SpringSecurityDialect;
 import org.thymeleaf.spring4.SpringTemplateEngine;
 import org.thymeleaf.spring4.context.SpringContextUtils;
 import org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver;
@@ -102,7 +103,7 @@ public class ThymeleafConfiguration {
 
     @Bean
     @ConditionalOnMissingBean(name = "thymeleafViewResolver")
-    @ConditionalOnProperty(name = "spring.thymeleaf3.enabled", matchIfMissing = true)
+    @ConditionalOnProperty(name = "spring.thymeleaf.enabled", matchIfMissing = true)
     public ThymeleafViewResolver thymeleafViewResolver() {
         ThymeleafViewResolver resolver = new ThymeleafViewResolver();
         resolver.setTemplateEngine(this.templateEngine());
@@ -125,4 +126,17 @@ public class ThymeleafConfiguration {
         parameters.putAll(type.getParameters());
         return new MimeType(type, parameters).toString();
     }
+
+    @Configuration
+    @ConditionalOnClass({ SpringSecurityDialect.class })
+    protected static class ThymeleafSecurityDialectConfiguration {
+
+        @Bean
+        @ConditionalOnMissingBean
+        public SpringSecurityDialect securityDialect() {
+            return new SpringSecurityDialect();
+        }
+
+    }
+
 }
