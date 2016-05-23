@@ -20,7 +20,7 @@ public class ApiSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .inMemoryAuthentication()
                 .withUser("user").password("password").roles("USER")
                 .and()
-                .withUser("admin").password("password").roles("USER", "admin");
+                .withUser("admin").password("password").roles("USER", "ADMIN");
     }
 
     @Override
