@@ -2,8 +2,8 @@
 <application generated-by="intellij" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.zeroturnaround.com" xsi:schemaLocation="http://www.zeroturnaround.com http://update.zeroturnaround.com/jrebel/rebel-2_1.xsd">
 
 	<classpath>
-		<dir name="/Users/jake/workspace/t-spring-s2/build/classes"></dir>
-		<dir name="/Users/jake/workspace/t-spring-s2/build/resources"></dir>
+		<dir name="/Users/jake/workspace/t-spring-s2/out/artifacts/t-spring-s2"></dir>
+		<dir name="/Users/jake/workspace/t-spring-s2/out/production/t-spring-s2"></dir>
 	</classpath>
 
 </application>

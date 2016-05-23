@@ -1,9 +1,10 @@
 package com.wirebarley.sample.s2;
 
+import com.wirebarley.sample.s2.configuration.ThymeleafConfiguration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication
+@SpringBootApplication(exclude = ThymeleafConfiguration.class)
 public class SpringS2Application {
 
 	public static void main(String[] args) {
